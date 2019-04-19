@@ -1,4 +1,4 @@
-package com.cisco.eds.salesiq.thread;
+package kafka.example.thread;
 
 import java.util.concurrent.CountDownLatch;
 

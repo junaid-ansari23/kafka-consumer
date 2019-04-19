@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cisco.eds.salesiq.util;
+package kafka.example.util;
 
 /**
  * @author juansari

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cisco.eds.salesiq.thread;
+package kafka.example.thread;
 
 import java.sql.Connection;
 import java.text.DateFormat;
@@ -12,8 +12,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cisco.eds.salesiq.dao.NgfDataDao;
-import com.cisco.eds.salesiq.util.NgfKafkaModel;
+import kafka.example.dao.NgfDataDao;
+import kafka.example.util.NgfKafkaModel;
 
 /**
  * @author juansari
@@ -46,7 +46,7 @@ public class KafkaProcessThread extends BaseThread {
 			DateFormat df = new SimpleDateFormat(PARSE_DATE_FORMAT);
 			mapper.setDateFormat(df);
 			NgfKafkaModel ngfKafkaModel=mapper.readValue(message, NgfKafkaModel.class);
-			NgfDataDao.insertNgfData(ngfKafkaModel, conn);
+			//NgfDataDao.insertNgfData(ngfKafkaModel, conn);
 			status=Boolean.TRUE;
 		}catch(Exception ex){
 			//Error,set process status for false;

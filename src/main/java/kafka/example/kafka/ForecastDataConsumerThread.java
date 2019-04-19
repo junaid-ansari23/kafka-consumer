@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cisco.eds.salesiq.kafka;
+package kafka.example.kafka;
 
 import java.util.List;
 import java.util.Properties;
@@ -11,7 +11,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cisco.eds.salesiq.util.Util;
+import kafka.example.util.Util;
 
 /**
  * @author juansari

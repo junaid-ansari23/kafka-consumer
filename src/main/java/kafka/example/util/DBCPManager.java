@@ -1,4 +1,4 @@
-package com.cisco.eds.salesiq.util;
+package kafka.example.util;
 
 import java.sql.Connection;
 import java.sql.SQLException;

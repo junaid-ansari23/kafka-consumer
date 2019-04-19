@@ -1,12 +1,12 @@
-package com.cisco.eds.salesiq.kafka;
+package kafka.example.kafka;
 
 import org.apache.commons.io.IOUtils;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.Producer;
 import org.apache.kafka.clients.producer.ProducerRecord;
 
-import com.cisco.eds.salesiq.dao.NgfDataDao;
-import com.cisco.eds.salesiq.util.NgfKafkaModel;
+import kafka.example.dao.NgfDataDao;
+import kafka.example.util.NgfKafkaModel;
 
 import java.io.InputStream;
 import java.util.Properties;

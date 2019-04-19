@@ -1,4 +1,4 @@
-package com.cisco.eds.salesiq.config;
+package kafka.example.config;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -7,18 +7,18 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cisco.eds.salesiq.kafka.ForecastDataConsumerThread;
-import com.cisco.eds.salesiq.thread.WorkerThreadPool;
-import com.cisco.eds.salesiq.util.DBCPManager;
-import com.cisco.eds.salesiq.util.Util;
+import kafka.example.kafka.ForecastDataConsumerThread;
+import kafka.example.thread.WorkerThreadPool;
+import kafka.example.util.DBCPManager;
+import kafka.example.util.Util;
 
 /**
  * @author juansari
  * Main invoker class to initialize kafka and other configuration and start the job
  *
  */
-public class InvokeSalesIqKafkaJob {
-	private static Logger logger = LoggerFactory.getLogger(InvokeSalesIqKafkaJob.class);
+public class InvokeConsumerJob {
+	private static Logger logger = LoggerFactory.getLogger(InvokeConsumerJob.class);
 	
 	public static void main(String a[]) {
 		logger.info("Starting SalesIQ Kafka forcast job at: {}",new Date());

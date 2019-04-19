@@ -1,4 +1,4 @@
-package com.cisco.eds.salesiq.util;
+package kafka.example.util;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -27,8 +27,8 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cisco.eds.salesiq.thread.KafkaProcessThread;
-import com.cisco.eds.salesiq.thread.WorkerThreadPool;
+import kafka.example.thread.KafkaProcessThread;
+import kafka.example.thread.WorkerThreadPool;
 
 
 public class Util {

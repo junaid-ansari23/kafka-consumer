@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cisco.eds.salesiq.dao;
+package kafka.example.dao;
 
 import java.io.InputStream;
 import java.sql.Connection;
@@ -16,8 +16,10 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.cisco.eds.salesiq.util.NgfKafkaModel;
-import com.cisco.eds.salesiq.util.NgfKeyModel;
+import kafka.example.util.NgfKafkaModel;
+import kafka.example.util.NgfKeyModel;
+
+import kafka.example.util.NgfTeamListModel;
 
 /**
  * DAO class for forecast data insertion operation 
@@ -56,7 +58,7 @@ public class NgfDataDao {
 		Connection conn=null;
 		try {                  
 			conn = DriverManager.getConnection(
-					"jdbc:sap://eds-hana-stg-01:30013;eds-hana-stg-06:30013;eds-hana-stg-02:30013?databaseName=HIP", "DISE", "g02DISE02");                  
+					"jdbc:sap://eds-hana-stg-01:30013;eds-hana-stg-06:30013;eds-hana-stg-02:30013?databaseName=HIP", "test", "test");                  
 		} catch (SQLException e) {
 			logger.error("Error while getting JDBC connection", e);
 			throw new Exception("Error while getting JDBC connection", e);
@@ -73,26 +75,26 @@ public class NgfDataDao {
 	 * @param connection
 	 * @throws Exception
 	 */
-	public static void insertNgfData(NgfKafkaModel ngfModel,Connection connection) throws Exception {
+	public static void insertNgfData(NgfTeamListModel ngfModel,Connection connection) throws Exception {
 		java.sql.PreparedStatement pstmt=null;
 		try {
 			if (connection != null) {
 				logger.info("Connection to HANA successful!");
 				List<NgfKeyModel> key1Model=null;
 				List<NgfKeyModel> key2Model=null;
-				if(ngfModel!=null) {
+				/*if(ngfModel!=null) {
 					key1Model=ngfModel.getKey1();
 					key2Model=ngfModel.getKey2();
-				}				
+				}*/				
 				pstmt=connection.prepareStatement(INSERT_QUERY);
 				
 				if(key1Model!=null && !key1Model.isEmpty()) {
 					for(NgfKeyModel key1:key1Model) {
-						pstmt.setString(1, ngfModel.getUserName());
-						pstmt.setString(2, ngfModel.getTerrName());
-						pstmt.setString(3, ngfModel.getTerrType());
-						pstmt.setString(4, ngfModel.getSalesRepNumber());
-						pstmt.setString(5, ngfModel.getDerivedSegment1());
+						pstmt.setString(1, "");
+						pstmt.setString(2, "");
+						pstmt.setString(3, "");
+						pstmt.setString(4, "");
+						pstmt.setString(5, "");
 						//pstmt.setDate(6, ngfModel.getFpbDate());
 						pstmt.setDate(6, null);
 						pstmt.setString(7, ngfModel.getVersion());
@@ -100,7 +102,7 @@ public class NgfDataDao {
 						pstmt.setString(9, "usd");
 						pstmt.setString(10, ngfModel.getNodeLowestLevelFlag());
 						pstmt.setString(11, ngfModel.getLowestLevelFlag());
-						pstmt.setString(12, ngfModel.getSystemUser());
+						pstmt.setString(12, "");
 
 						pstmt.setString(13, key1.getYearName());
 						pstmt.setString(14, key1.getQuarterName());
@@ -152,11 +154,11 @@ public class NgfDataDao {
 				if(key2Model!=null && !key2Model.isEmpty()) {
 					for(NgfKeyModel key2:key2Model) {
 
-						pstmt.setString(1, ngfModel.getUserName());
-						pstmt.setString(2, ngfModel.getTerrName());
-						pstmt.setString(3, ngfModel.getTerrType());
-						pstmt.setString(4, ngfModel.getSalesRepNumber());
-						pstmt.setString(5, ngfModel.getDerivedSegment1());
+						pstmt.setString(1, "");
+						pstmt.setString(2, "");
+						pstmt.setString(3, "");
+						pstmt.setString(4, "");
+						pstmt.setString(5, "");
 						//pstmt.setDate(6, ngfModel.getFpbDate());
 						pstmt.setDate(6, null);
 						pstmt.setString(7, ngfModel.getVersion());
@@ -164,7 +166,7 @@ public class NgfDataDao {
 						pstmt.setString(9, "usd");
 						pstmt.setString(10, ngfModel.getNodeLowestLevelFlag());
 						pstmt.setString(11, ngfModel.getLowestLevelFlag());
-						pstmt.setString(12, ngfModel.getSystemUser());
+						pstmt.setString(12, "");
 
 						pstmt.setString(13, key2.getYearName());
 						pstmt.setString(14, key2.getQuarterName());

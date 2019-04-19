@@ -1,4 +1,4 @@
-package com.cisco.eds.salesiq.kafka;
+package kafka.example.kafka;
 
 
 import org.apache.kafka.clients.consumer.KafkaConsumer;

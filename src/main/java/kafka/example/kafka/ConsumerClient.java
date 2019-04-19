@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.cisco.eds.salesiq.kafka;
+package kafka.example.kafka;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

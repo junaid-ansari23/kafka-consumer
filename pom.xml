@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.cisco.eds.salesiq</groupId>
-	<artifactId>salesiqkafka</artifactId>
+	<groupId>kafka.sample.consumer</groupId>
+	<artifactId>consumerjob</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 	<repositories>
@@ -109,12 +109,12 @@
 					<descriptorRefs>
 						<descriptorRef>jar-with-dependencies</descriptorRef>
 					</descriptorRefs>
-					<finalName>salesIqKafkaIntegration</finalName>
+					<finalName>kafka-consumer</finalName>
 					<appendAssemblyId>false</appendAssemblyId>
 					<!-- MainClass in mainfest make a executable jar -->
 					<archive>
 						<manifest>
-							<mainClass>com.cisco.eds.salesiq.config.InvokeKafkaJob</mainClass>
+							<mainClass>kafka.example.config.InvokeConsumerJob</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
